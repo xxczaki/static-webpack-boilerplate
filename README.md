@@ -13,6 +13,10 @@
 
 ## Usage
 
+You can simply click the following button to instantly deploy an example site with [Netlify](https://www.netlify.com):
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/xxczaki/static-webpack-boilerplate)
+
 ```bash
 # Install dependencies
 
