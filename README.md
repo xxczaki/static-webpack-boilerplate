@@ -6,8 +6,8 @@
 
 ## Features
 
-- Webpack
-- Babel
+- Webpack 4
+- Babel 7
 - Stylelint
 - XO 
 
