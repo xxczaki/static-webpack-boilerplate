@@ -8,7 +8,6 @@
 
 - Webpack
 - Babel
-- PostCSS
 - Stylelint
 - XO 
 
