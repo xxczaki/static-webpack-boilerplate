@@ -1,0 +1,5 @@
+# Netlify config file  
+
+[build]
+  publish = "build"
+  command = "npm run build"
