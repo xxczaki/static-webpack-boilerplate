@@ -1,6 +1,10 @@
 const presets = [
 	['@babel/env', {
-		targets: 'last 1 version'
+		targets: {
+			esmodules: true
+		},
+		corejs: 3,
+		useBuiltIns: 'usage'
 	}]
 ];
 
