@@ -1,0 +1,63 @@
+:root {
+  --font-stack: Open Sans, Segoe UI, Tahoma, sans-serif !important;
+  --text-color: #fff;
+  --main-background-color: #212121;
+  --button-background-color: #474747;
+  --button-animation-color: #616161;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+      url('../fonts/open-sans-v16-latin-regular.woff2') format('woff2'),
+      url('../fonts/open-sans-v16-latin-regular.woff') format('woff'); 
+}
+
+body {
+  font-family: var(--font-stack);
+  background: var(--main-background-color);
+  color: var(--text-color);
+  padding: 1em;
+  line-height: 1.8em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  word-wrap: break-word
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto 30px;
+  max-width: 50em;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  width: 150px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--button-background-color);
+  box-shadow: 0 0 4px var(--button-animation-color);
+  outline: none;
+  background-position: center;
+  transition: background 0.8s;
+}
+
+button:hover {
+  background: var(--button-animation-color) radial-gradient(circle, transparent 1%, var(--button-animation-color) 1%) center/15000%;
+}
+
+button:active {
+  background-color: var(--button-background-color);
+  background-size: 100%;
+  transition: background 0s;
+}
