@@ -77,6 +77,10 @@ I recommend to use either [Zeit Now](https://now.sh) or [Netlify](https://netlif
 - [ ] HMR
 - [ ] Testing
 
+## Related
+
+- [styled-react-boilerplate](https://github.com/xxczaki/styled-react-boilerplate)
+
 ### License
 
 MIT
