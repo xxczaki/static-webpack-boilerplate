@@ -86,9 +86,15 @@ module.exports = (env, argv) => {
 					]
 				},
 				{
-					test: /\.(jpg|png|webp|gif|svg|ico)$/,
+					test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
 					use: [
-						'file-loader',
+						{
+							loader: 'url-loader',
+							options: {
+								limit: 8192,
+								fallback: 'file-loader?name="[path][name].[ext]"'
+							}
+						},
 						{
 							loader: 'img-loader',
 							options: {
