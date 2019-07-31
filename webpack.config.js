@@ -12,10 +12,10 @@ module.exports = (env, argv) => {
 	const {mode} = argv;
 
 	return {
-		entry: './public/js/main.js',
+		entry: './public/js/main.mjs',
 		output: {
-			filename: '[name].[hash].js',
-			chunkFilename: '[name].[chunkhash].chunk.js',
+			filename: '[name].[hash].mjs',
+			chunkFilename: '[name].[chunkhash].chunk.mjs',
 			path: path.resolve(__dirname, 'dist')
 		},
 		optimization: {
@@ -23,20 +23,26 @@ module.exports = (env, argv) => {
 			minimizer: [
 				new TerserPlugin({
 					terserOptions: {
-						warnings: false,
 						compress: {
-							comparisons: false
+							ecma: 5,
+							warnings: false,
+							comparisons: false,
+							inline: 2
 						},
-						parse: {},
-						mangle: true,
+						parse: {
+							ecma: 8
+						},
+						mangle: {safari10: true},
 						output: {
+							ecma: 5,
+							safari10: true,
 							comments: false,
-							/* eslint-disable camelcase */
+							/* eslint-disable-next-line camelcase */
 							ascii_only: true
-							/* eslint-enable camelcase */
 						}
 					},
 					parallel: true,
+					sourceMap: false,
 					cache: true
 				})
 			],
@@ -137,6 +143,7 @@ module.exports = (env, argv) => {
 					useShortDoctype: true,
 					removeEmptyAttributes: true,
 					removeStyleLinkTypeAttributes: true,
+					removeScriptTypeAttributes: true,
 					keepClosingSlash: true,
 					minifyJS: true,
 					minifyCSS: true,
@@ -150,8 +157,9 @@ module.exports = (env, argv) => {
 				}
 			),
 			new ScriptExtHtmlWebpackPlugin({
-				prefetch: /\.js$/,
-				defaultAttribute: 'async'
+				prefetch: [/\.mjs$/],
+				defaultAttribute: 'async',
+				module: [/\.mjs$/]
 			}),
 			new HashedModuleIdsPlugin({
 				hashFunction: 'sha256',
