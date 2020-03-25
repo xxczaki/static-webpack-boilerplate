@@ -183,10 +183,7 @@ module.exports = (env, argv) => {
 			}),
 			/* eslint-enable camelcase */
 			new GenerateSW({
-				swDest: 'sw.js',
-				importWorkboxFrom: 'local',
-				clientsClaim: true,
-				skipWaiting: true
+				swDest: 'sw.js'
 			}),
 			new FriendlyErrorsWebpackPlugin()
 		]
