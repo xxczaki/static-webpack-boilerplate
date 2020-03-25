@@ -50,7 +50,8 @@
             "browser"
         ],
         "rules": {
-            "import/no-unassigned-import": "off"
+            "import/no-unassigned-import": "off",
+            "import/no-extraneous-dependencies": "off"
         }
     }
 }
